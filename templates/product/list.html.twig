@@ -1,0 +1,18 @@
+<h1>Product List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+            <tr>
+                <td><a href="{{ path('product_detail', {id: product.id}) }}">{{ product.title }}</a></td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ path('product_list') }}?page={{ page + 1 }}">Next Page</a>
